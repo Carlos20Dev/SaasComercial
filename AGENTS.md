@@ -7,9 +7,10 @@
 - Navegador → Next.js BFF → Express REST API `/api/v1`.
 - El BFF usa `API_INTERNAL_URL` solo en servidor; nunca exponerla como `NEXT_PUBLIC_*`.
 - Express es la autoridad final de autenticación contextual, autorización, tenant y reglas de negocio.
-- PostgreSQL + Prisma; Zod para validar entradas.
+- PostgreSQL + Prisma 7 (versión fijada; Decisión D-014); Zod para validar entradas.
 - UI: Tailwind CSS, shadcn/ui, Lucide. Pruebas: Vitest, Supertest, Playwright.
 - Planes/suscripciones/límites SaaS están separados de membresías y RBAC.
+- Licencia propietaria de elaboración propia de Carlos Colan Tezen (todos los derechos reservados); ver `LICENSE`.
 
 ## Seguridad y dominio
 - Nunca confiar en `tenantId` enviado por el navegador.
@@ -36,7 +37,7 @@
 - Mantener la documentación de `docs/` sincronizada con decisiones técnicas importantes y registrar qué nota del vault debe actualizar el usuario.
 - No inventar ni reemplazar decisiones aprobadas.
 - El Documento 08 (diccionario de datos/schema Prisma) requiere verificación completa antes de definir migraciones definitivas; el original NO está en el vault (solo un resumen "Incompleto; requiere original").
-- Hay un conflicto de precisión: Doc 07 menciona `DECIMAL(14,3)` para cantidad de inventario y Doc 16 propuso `NUMERIC(19,4)`. No resolverlo sin decisión explícita.
+- Precisión de cantidad de inventario **decidida**: `DECIMAL(14,3)` en el esquema Prisma (resuelve el conflicto Doc 07 vs Doc 16; Decisión D-010).
 
 ## Skills de agente y validación de UI
 - Ubicaciones de descubrimiento: `.opencode/skills/<nombre>/SKILL.md` (proyecto), `.agents/skills/<nombre>/SKILL.md` (importadas con `npx skills add`) y `~/.config/opencode/skills/<nombre>/SKILL.md` (global). Reiniciar opencode tras añadir o cambiar una skill.
@@ -45,7 +46,7 @@
 - Skills globales (`~/.config/opencode/skills/`): `reviewing-security`, `evolving-apis-and-schemas`, `reviewing-interface-quality`.
 - Las skills se cargan bajo demanda y no se auto-activan; restringirlas por agente requiere `permission.skill`.
 - Algunas skills globales/importadas (`evolving-apis-and-schemas`, `reviewing-interface-quality`, `prisma-cli`) referencian skills compañeras que no están instaladas; no asumir que existen.
-- `prisma-cli` asume Prisma ORM 7; el proyecto aún no fija la versión de Prisma (ver Doc 15). Confirmar antes de usarla.
+- `prisma-cli` corresponde a Prisma ORM 7; el proyecto fija **Prisma 7** (Decisión D-014), por lo que la skill es aplicable.
 - `browser-validation` usa dos CLIs externos que deben estar instalados: `agent-browser` y `playwright-cli` (`npm install -g agent-browser @playwright/cli`), más el navegador de agent-browser (`agent-browser install`). Requiere Node.js ≥ 18.
 - En Windows con PowerShell, `agent-browser`/`playwright-cli` (shims `.ps1`) requieren `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`; si no, invocar los `.cmd`.
 - El modo `chat` de agent-browser envía contenido de página a un modelo externo y requiere `AI_GATEWAY_API_KEY`; usar solo con aprobación explícita y en URLs locales/de prueba/aprobadas.

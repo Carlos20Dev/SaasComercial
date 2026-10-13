@@ -10,7 +10,7 @@ SaaS multi-tenant de gestión comercial para MYPE en Perú.
 - Navegador → **Next.js (App Router)** BFF → **Express** REST `/api/v1`.
 - `API_INTERNAL_URL` solo en servidor; nunca expuesta como `NEXT_PUBLIC_*`.
 - Express es la autoridad final de autenticación, autorización, tenant y reglas de negocio.
-- **PostgreSQL + Prisma**; validación de entradas con **Zod**.
+- **PostgreSQL + Prisma 7**; validación de entradas con **Zod**.
 - Multi-tenant con aislamiento por tenant en la capa de aplicación (RLS post-MVP).
 - Planes/suscripciones SaaS separados de membresías y RBAC.
 
@@ -33,9 +33,12 @@ documento → carpeta y bloqueos conocidos.
 - [x] Configuración de agentes (tech-lead + 7 especialistas) y comandos.
 - [x] Conexión documental vault ↔ repositorio.
 - [x] Publicación del repositorio en GitHub.
+- [x] Precisión de cantidad de inventario decidida: `DECIMAL(14,3)` (D-010).
 - [ ] Andamiaje de aplicación (monorepo, CI, base de datos).
-- [ ] Modelo de datos definitivo (bloqueado: falta el Documento 08 original y la precisión decimal).
+- [ ] Modelo de datos definitivo (bloqueado: falta el Documento 08 original).
 
 ## Licencia
 
-Pendiente de definir.
+Licencia de elaboración propia de Carlos Colan Tezen — **todos los derechos reservados**.
+Este repositorio es público solo a título informativo y no concede permiso de uso,
+copia, modificación ni distribución. Ver [`LICENSE`](./LICENSE).

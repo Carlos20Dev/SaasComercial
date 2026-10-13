@@ -24,6 +24,7 @@ Este directorio reúne las copias de trabajo que el agente necesita leer directa
 ### Estado real de los documentos de datos
 - Doc 07 y Doc 16: "Reconstruido desde resumen".
 - Doc 08: "Incompleto; requiere original". El original **no está en el vault**; recuperarlo antes de definir `schema.prisma`.
+- Precisión de cantidad de inventario decidida: `DECIMAL(14,3)` (D-010). El proyecto fija Prisma 7 (D-014).
 
 ## Recomendación
 - Mantener en `docs/` solo la especificación activa que el agente deba leer desde el repo; el resto vive en el vault.
@@ -31,4 +32,4 @@ Este directorio reúne las copias de trabajo que el agente necesita leer directa
 - Evitar copias divergentes: acordar la fuente de verdad por archivo. No versionar el contenido del vault en el repositorio sin decisión explícita.
 
 ## Bloqueo conocido
-No finalizar el esquema Prisma inicial hasta recuperar y validar el Documento 08 original y resolver la precisión de cantidades de inventario (Doc 07 `DECIMAL(14,3)` vs Doc 16 `NUMERIC(19,4)`; Doc 08 fija `DECIMAL(14,3)` como provisional).
+No finalizar el esquema Prisma inicial hasta recuperar y validar el **Documento 08 original** (su original **no** está en el vault). La precisión de cantidad de inventario ya está decidida: `DECIMAL(14,3)` (D-010).
