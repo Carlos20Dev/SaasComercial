@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "tech-lead",
+  "permission": {
+    "external_directory": {
+      "../ProyectoMype": "allow",
+      "../ProyectoMype/**": "allow"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+# Playwright CLI output and browser artifacts
+.playwright-cli/
+playwright-report/
+test-results/
+blob-report/
+trace.zip
+
+# Node diagnostics
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# macOS metadata
+.DS_Store

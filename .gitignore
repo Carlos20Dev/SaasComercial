@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+
+# Entorno y secretos
+.env
+.env.*
+!.env.example
+
+# Build y artefactos
+dist/
+build/
+coverage/
+*.log
+
+# OpenCode / navegador (artefactos generados)
+.playwright-cli/
+**/.playwright-cli/
+
+# Sistema y editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

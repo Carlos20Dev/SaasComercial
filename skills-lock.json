@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "browser-validation": {
+      "source": "thekorsen/opencode-browser-skill",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "ea4d0c20b4b6dddc3961af1539906a85bec3fa10026a075cfa01dcd9bc27fc45"
+    },
+    "prisma-cli": {
+      "source": "prisma/skills",
+      "sourceType": "github",
+      "skillPath": "prisma-cli/SKILL.md",
+      "computedHash": "f1e28c22e9dd3457eebc05c53a7921f96f8b9fdcf50edb93a0b1de73b78fa2c5"
+    }
+  }
+}
