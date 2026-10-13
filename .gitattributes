@@ -1,0 +1,19 @@
+# Normaliza finales de linea en el repositorio para evitar diffs ruidosos.
+* text=auto
+
+*.md text
+*.json text
+*.jsonc text
+*.ts text
+*.tsx text
+*.js text
+*.yml text
+*.yaml text
+*.sh text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
