@@ -1,10 +1,9 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "default_agent": "tech-lead",
-  "permission": {
-    "external_directory": {
-      "../ProyectoMype": "allow",
-      "../ProyectoMype/**": "allow"
-    }
-  }
+  // Nota: la regla efectiva de `external_directory` para el vault (`../ProyectoMype`)
+  // vive en la configuración global del usuario (~/.config/opencode/opencode.jsonc) con
+  // "RUTA_ABS_DEL_VAULT/*" y "RUTA_ABS_DEL_VAULT/**". Razón: opencode matchea solo rutas
+  // canónicas absolutas (no patrones relativos) y la ruta local no se versiona por
+  // privacidad. Detalles: docs/README.md y docs/skills.md.
+  "default_agent": "tech-lead"
 }

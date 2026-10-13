@@ -30,6 +30,7 @@
 - Mapa documento → carpeta del vault:
   - 01–05 → `01 - Producto y Requisitos/`; 06 y 15 → `02 - Arquitectura/`; 07, 08 y 16 → `03 - Datos y Base de Datos/`; 09 → `04 - API y Backend/`; 10 → `05 - Seguridad/`; 13 y 14 → `06 - Frontend/`; 11 → `07 - Calidad y Despliegue/`; 17 y 18 → `08 - Integraciones/`; 12 y Roadmap → `09 - Planificacion/`; control y registro → `00 - Inicio/` y `10 - Registro y Seguimiento/`.
 - No duplicar ni versionar el contenido del vault en el repositorio sin decisión explícita.
+- Acceso al vault: opencode matchea `external_directory` solo con rutas canónicas absolutas (no patrones relativos). La regla efectiva vive en la configuración **global** del usuario (`~/.config/opencode/opencode.jsonc`: `RUTA_ABS_DEL_VAULT/*` y `RUTA_ABS_DEL_VAULT/**`, donde `RUTA_ABS_DEL_VAULT` es la ruta local absoluta del vault, por defecto la carpeta hermana del repositorio); no versionar esa ruta en el repositorio.
 
 ## Uso de documentación
 - Leer primero el vault (`../ProyectoMype`, ver arriba) y los documentos de `docs/`.
@@ -45,7 +46,7 @@
 - Skills importadas (`.agents/skills/`; no editar sin revisar el diff, se reinstalan con `npx skills add`): `prisma-cli` (Prisma ORM 7) y `browser-validation` (validación de UI con navegador).
 - Skills globales (`~/.config/opencode/skills/`): `reviewing-security`, `evolving-apis-and-schemas`, `reviewing-interface-quality`.
 - Las skills se cargan bajo demanda y no se auto-activan; restringirlas por agente requiere `permission.skill`.
-- Algunas skills globales/importadas (`evolving-apis-and-schemas`, `reviewing-interface-quality`, `prisma-cli`) referencian skills compañeras que no están instaladas; no asumir que existen.
+- Algunas skills instaladas/globales referencian skills compañeras (p. ej. `prisma-orm-setup`, `writing-plans`, `systematic-debugging`) que **no están instaladas**; ver el inventario oficial en `docs/skills.md`. No asumir que existen; cargarlas solo a demanda (Tech Lead) e instalar con `npx skills add` si se necesitan.
 - `prisma-cli` corresponde a Prisma ORM 7; el proyecto fija **Prisma 7** (Decisión D-014), por lo que la skill es aplicable.
 - `browser-validation` usa dos CLIs externos que deben estar instalados: `agent-browser` y `playwright-cli` (`npm install -g agent-browser @playwright/cli`), más el navegador de agent-browser (`agent-browser install`). Requiere Node.js ≥ 18.
 - En Windows con PowerShell, `agent-browser`/`playwright-cli` (shims `.ps1`) requieren `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`; si no, invocar los `.cmd`.

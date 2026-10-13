@@ -31,5 +31,9 @@ Este directorio reúne las copias de trabajo que el agente necesita leer directa
 - Usar el vault para el mapa global, la bitácora y el seguimiento.
 - Evitar copias divergentes: acordar la fuente de verdad por archivo. No versionar el contenido del vault en el repositorio sin decisión explícita.
 
+### Skills y permisos (vault y herramientas)
+- Inventario oficial de skills (instaladas y compañeras no instaladas): [`skills.md`](./skills.md).
+- El acceso al vault se declara en la configuración **global** del usuario (`~/.config/opencode/opencode.jsonc` → `RUTA_ABS_DEL_VAULT/*` y `RUTA_ABS_DEL_VAULT/**`, siendo `RUTA_ABS_DEL_VAULT` la ruta local absoluta del vault, por defecto la carpeta hermana del repositorio). opencode matchea rutas canónicas absolutas y no admite patrones relativos; la ruta local no se versiona por privacidad.
+
 ## Bloqueo conocido
 No finalizar el esquema Prisma inicial hasta recuperar y validar el **Documento 08 original** (su original **no** está en el vault). La precisión de cantidad de inventario ya está decidida: `DECIMAL(14,3)` (D-010).
